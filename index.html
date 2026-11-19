@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f0ea">
+  <meta name="description" content="Crie uma sala, convide sua galera e assistam a vídeos ou ouçam música juntos.">
+  <title>Junto — sua sala, sua galera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body data-theme="home" data-authenticated="false">
+  <button class="sidebar-backdrop" type="button" data-menu-close aria-label="Fechar menu" hidden></button>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal" aria-hidden="true" inert>
+    <button class="sidebar-close" type="button" data-menu-close aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <a class="brand" href="#inicio" aria-label="Junto, página inicial">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M7 17.5 13.2 24 25 9" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">junto<span>.</span></span>
+    </a>
+
+    <div class="sidebar-content">
+      <p class="nav-caption">SUA SALA</p>
+      <nav class="service-nav" aria-label="Plataformas">
+        <button class="nav-link youtube-link" type="button" data-theme-choice="youtube" aria-label="YouTube" aria-pressed="false">
+          <span class="nav-icon youtube-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+            </svg>
+          </span>
+          <span class="nav-label">YouTube</span>
+          <span class="active-dot" aria-hidden="true"></span>
+        </button>
+        <button class="nav-link spotify-link" type="button" data-theme-choice="spotify" aria-label="Spotify" aria-pressed="false">
+          <span class="nav-icon spotify-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.1-10.55-1.15a.75.75 0 1 1-.33-1.46c4.58-1.05 8.5-.6 11.66 1.33a.75.75 0 0 1 .25 1.03Zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.99-8.16-2.56-11.98-1.4a.94.94 0 1 1-.55-1.8c4.37-1.33 9.8-.69 13.51 1.6a.94.94 0 0 1 .31 1.29Zm.13-3.4C15.23 8.3 8.8 8.08 5.08 9.21a1.13 1.13 0 1 1-.66-2.15c4.27-1.3 11.37-1.05 15.85 1.61a1.13 1.13 0 0 1-1.17 1.96Z"/>
+            </svg>
+          </span>
+          <span class="nav-label">Spotify</span>
+          <span class="active-dot" aria-hidden="true"></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="note-sparkle" aria-hidden="true">✳</span>
+        <p>As melhores coisas ficam melhores <strong>juntas.</strong></p>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <span class="avatar" data-profile-avatar aria-hidden="true">V</span>
+      <span class="profile-copy"><strong data-profile-name>Visitante</strong><small data-profile-status>Que bom ter você aqui</small></span>
+      <button class="profile-menu" id="profile-menu-button" type="button" aria-label="Opções da conta" aria-controls="profile-dropdown" aria-expanded="false">···</button>
+      <div class="profile-dropdown" id="profile-dropdown" hidden>
+        <button type="button" data-account-action="settings">Configurações da conta</button>
+        <button type="button" data-account-action="privacy">Privacidade e segurança</button>
+        <button type="button" data-account-action="notifications">Notificações</button>
+        <p class="profile-menu-feedback" role="status" aria-live="polite"></p>
+        <button class="signout-button" type="button" data-account-action="signout">Sair da conta</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content" id="inicio">
+    <header class="topbar">
+      <div class="topbar-start">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="breadcrumb">
+          <a class="breadcrumb-home" id="breadcrumb-home" href="#inicio">Início</a>
+          <span class="breadcrumb-divider" id="breadcrumb-divider" hidden>/</span>
+          <strong id="breadcrumb-current" hidden></strong>
+        </div>
+      </div>
+      <a class="topbar-link" id="topbar-account-link" href="#conta">
+        <span id="topbar-account-label">Log In/Sign up</span>
+        <span aria-hidden="true">↘</span>
+      </a>
+    </header>
+
+    <div class="page-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A DISTÂNCIA, MAS JUNTOS</p>
+          <h1 id="hero-title">Sua sala.<br>Sua galera<span class="hero-period">.</span></h1>
+          <p class="hero-description">Crie uma sala, sincronize vídeos do YouTube ou músicas do Spotify e convide sua galera para curtir junto.</p>
+          <a class="primary-button" href="#conta">
+            <span id="create-party-label">Começar uma watch party</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="hero-social-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <img class="mini-avatar mini-avatar-one" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=96&amp;h=96&amp;q=80" alt="" width="24" height="24" loading="lazy" decoding="async">
+              <img class="mini-avatar mini-avatar-two" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=96&amp;h=96&amp;q=80" alt="" width="24" height="24" loading="lazy" decoding="async">
+              <img class="mini-avatar mini-avatar-three" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=96&amp;h=96&amp;q=80" alt="" width="24" height="24" loading="lazy" decoding="async">
+              <span class="mini-avatar mini-avatar-four">+</span>
+            </div>
+            <span>Um play, <strong>todo mundo junto.</strong></span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-sun"></div>
+          <div class="art-card art-card-back">
+            <span class="art-card-label">NO MESMO RITMO</span>
+            <span class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="art-card art-card-front">
+            <span class="play-disc">
+              <span class="play-triangle"></span>
+              <svg class="play-platform-icon play-youtube-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+              </svg>
+              <svg class="play-platform-icon play-spotify-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0Zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.1-10.55-1.15a.75.75 0 1 1-.33-1.46c4.58-1.05 8.5-.6 11.66 1.33a.75.75 0 0 1 .25 1.03Zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.99-8.16-2.56-11.98-1.4a.94.94 0 1 1-.55-1.8c4.37-1.33 9.8-.69 13.51 1.6a.94.94 0 0 1 .31 1.29Zm.13-3.4C15.23 8.3 8.8 8.08 5.08 9.21a1.13 1.13 0 1 1-.66-2.15c4.27-1.3 11.37-1.05 15.85 1.61a1.13 1.13 0 0 1-1.17 1.96Z"/>
+              </svg>
+            </span>
+            <span class="art-card-text"><strong>o play é nosso</strong><small>conectados, onde for</small></span>
+            <span class="art-hearts" aria-hidden="true">✳</span>
+          </div>
+          <span class="floating-note note-left">♫</span>
+          <span class="floating-note note-right">✳</span>
+          <span class="art-caption">a distância é só um detalhe</span>
+        </div>
+      </section>
+
+      <section class="account-section" id="conta" aria-labelledby="account-title">
+        <div class="account-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> SUA PRÓXIMA SALA COMEÇA AQUI</p>
+          <h2 id="account-title">Mais perto de quem você gosta.</h2>
+          <p>Entre ou crie sua conta para começar uma watch party. Escolha um serviço no menu e a gente prepara o clima.</p>
+          <div class="account-platform">
+            <span class="account-platform-icon" aria-hidden="true">✳</span>
+            <span id="auth-platform-note"></span>
+          </div>
+        </div>
+
+        <div class="auth-panel">
+          <section class="auth-view" data-auth-view="login" aria-labelledby="login-title">
+            <div class="auth-heading">
+              <span class="auth-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="m5 12.5 4.5 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <p class="auth-kicker">BEM-VINDO DE VOLTA</p>
+              <h3 id="login-title">Entre na sua conta</h3>
+              <p class="auth-subtitle">A diversão é melhor quando todo mundo chega.</p>
+            </div>
+            <form class="auth-form" data-auth-form="login" novalidate>
+              <label class="form-field">
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email" placeholder="voce@email.com" aria-describedby="login-email-error" required>
+                <small class="field-error" id="login-email-error" data-field-error hidden></small>
+              </label>
+              <label class="form-field">
+                <span>Senha</span>
+                <input type="password" name="password" autocomplete="current-password" placeholder="Sua senha" aria-describedby="login-password-error" required>
+                <small class="field-error" id="login-password-error" data-field-error hidden></small>
+              </label>
+              <button class="text-button forgot-link" type="button" data-auth-open="reset">Esqueci minha senha</button>
+              <button class="auth-submit" type="submit">Entrar <span aria-hidden="true">↗</span></button>
+              <p class="form-feedback" data-form-feedback role="status" aria-live="polite"></p>
+            </form>
+            <p class="auth-switch">Ainda não tem uma conta? <button class="text-button" type="button" data-auth-open="signup">Criar conta</button></p>
+          </section>
+
+          <section class="auth-view" data-auth-view="signup" aria-labelledby="signup-title" hidden>
+            <div class="auth-heading">
+              <span class="auth-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <p class="auth-kicker">BORA FICAR JUNTO?</p>
+              <h3 id="signup-title">Crie sua conta</h3>
+              <p class="auth-subtitle">Informe seu e-mail e crie uma senha para continuar.</p>
+            </div>
+            <form class="auth-form" data-auth-form="signup" novalidate>
+              <label class="form-field">
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email" placeholder="voce@email.com" aria-describedby="signup-email-error" required>
+                <small class="field-error" id="signup-email-error" data-field-error hidden></small>
+              </label>
+              <label class="form-field">
+                <span>Crie uma senha</span>
+                <input type="password" name="password" autocomplete="new-password" placeholder="Pelo menos 8 caracteres" minlength="8" aria-describedby="signup-password-error" required>
+                <small class="field-error" id="signup-password-error" data-field-error hidden></small>
+              </label>
+              <label class="form-field">
+                <span>Confirme sua senha</span>
+                <input type="password" name="password-confirm" autocomplete="new-password" placeholder="Digite a senha novamente" aria-describedby="signup-password-confirm-error" required>
+                <small class="field-error" id="signup-password-confirm-error" data-field-error hidden></small>
+              </label>
+              <button class="auth-submit" type="submit">Criar conta <span aria-hidden="true">↗</span></button>
+              <p class="form-feedback" data-form-feedback role="status" aria-live="polite"></p>
+            </form>
+            <p class="auth-switch">Já tem uma conta? <button class="text-button" type="button" data-auth-open="login">Entrar</button></p>
+          </section>
+
+          <section class="auth-view" data-auth-view="username" aria-labelledby="username-title" hidden>
+            <div class="auth-heading">
+              <span class="auth-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M5 20c.7-3.1 3.2-5 7-5s6.3 1.9 7 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <p class="auth-kicker">SÓ MAIS UM PASSO</p>
+              <h3 id="username-title">Escolha seu usuário</h3>
+              <p class="auth-subtitle">Esse nome vai aparecer para sua galera nas salas.</p>
+            </div>
+            <form class="auth-form" data-auth-form="username" novalidate>
+              <label class="form-field">
+                <span>Nome de usuário</span>
+                <input type="text" name="username" autocomplete="username" placeholder="ex.: mariana.s" minlength="3" maxlength="20" pattern="[A-Za-z0-9._]+" title="Use letras, números, ponto ou sublinhado." aria-describedby="username-error" required>
+                <small class="field-error" id="username-error" data-field-error hidden></small>
+              </label>
+              <button class="auth-submit" type="submit">Salvar usuário <span aria-hidden="true">↗</span></button>
+              <p class="form-feedback" data-form-feedback role="status" aria-live="polite"></p>
+            </form>
+            <p class="auth-footnote">Prévia do cadastro: a conta só será criada e salva quando a integração com o servidor estiver disponível.</p>
+          </section>
+
+          <section class="auth-view" data-auth-view="reset" aria-labelledby="reset-title" hidden>
+            <div class="auth-heading">
+              <span class="auth-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8.5 12 14l9-5.5M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <p class="auth-kicker">ACONTECE</p>
+              <h3 id="reset-title">Esqueceu a senha?</h3>
+              <p class="auth-subtitle">Informe seu e-mail para recuperar o acesso.</p>
+            </div>
+            <form class="auth-form" data-auth-form="reset" novalidate>
+              <label class="form-field">
+                <span>E-mail da sua conta</span>
+                <input type="email" name="email" autocomplete="email" placeholder="voce@email.com" aria-describedby="reset-email-error" required>
+                <small class="field-error" id="reset-email-error" data-field-error hidden></small>
+              </label>
+              <button class="auth-submit" type="submit">Recuperar senha <span aria-hidden="true">↗</span></button>
+              <p class="form-feedback" data-form-feedback role="status" aria-live="polite"></p>
+            </form>
+            <p class="auth-switch"><button class="text-button" type="button" data-auth-open="login">← Voltar para entrar</button></p>
+          </section>
+          <p class="auth-footnote">Ao continuar, você concorda com nossos termos de uso e política de privacidade.</p>
+        </div>
+      </section>
+      <footer class="page-footer">
+        <span>Para acessar watch parties de serviços pagos, como Spotify, é necessária uma conta oficial do serviço.</span>
+        <span>© JUNTO. TODOS OS DIREITOS RESERVADOS.</span>
+      </footer>
+    </div>
+  </main>
+  <script src="js/index.js" defer></script>
+</body>
+</html>
